@@ -1,0 +1,4 @@
+file=E:\XXH\YiZhi-master\app\build\outputs\mapping\release\mapping.txt
+sha1=519bae2a1bb6c4182c3a56dd3084b5aeb3aa0de4
+appId=c73ecc54da
+

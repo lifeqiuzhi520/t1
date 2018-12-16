@@ -1,5 +1,5 @@
 // host
-include ':host'
+include ':host', ':sdk', ':yizhi'
 // plugin
 include ':plugin-demo'
 include ':plugin-nosdklib'

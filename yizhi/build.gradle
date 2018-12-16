@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+apply plugin: 'bugly'
+
+bugly {
+    appId = "c73ecc54da"
+    appKey = "27580d71-8095-4e00-8212-85b9ddf985a4"
+}
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId "com.xiaoqi.ceshisssssss"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 10
+        versionName "1.10"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        manifestPlaceholders = [
+
+                "JPUSH_PKGNAME":applicationId,
+                "JPUSH_APPKEY":"c7ba5b084c4742a8a347f7df",
+                "JPUSH_CHANNEL":"developer-default"
+        ]
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'armeabi-v7a', 'x86'
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            // 不显示Log
+         //   buildConfigField "boolean", "LOG_DEBUG", "false"
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+          //  zipAlignEnabled true
+            // 移除无用的resource文件
+         //   shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile fileTree(include: '*.jar', dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //Butterknife
+    //    compile "com.jakewharton:butterknife:$rootProject.butterknifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$rootProject.butterknifeVersion"
+    testCompile 'junit:junit:4.12'
+    compile project(':sdk')
+    //    debugImplementation project(':sdk')
+    //    releaseImplementation project(':sdk')
+    compile files('src/main/jniLibs/android-async-http-1.4.8.jar')
+    compile files('src/main/jniLibs/android-mastersdk-1.25.jar')
+    compile files('src/main/jniLibs/bugly_agent.jar')
+    compile files('src/main/jniLibs/bugly_crash_release.jar')
+    compile files('src/main/jniLibs/jcore-android-1.2.0.jar')
+    compile files('src/main/jniLibs/jpush-android-3.1.2.jar')
+    compile files('src/main/jniLibs/Msc.jar')
+    compile files('src/main/jniLibs/org.apache.http.legacy.jar')
+    compile files('src/main/jniLibs/Sunflower.jar')
+    compile files('src/main/jniLibs/zxing.jar')
+}
