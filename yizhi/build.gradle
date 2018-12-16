@@ -59,7 +59,9 @@ android {
         abortOnError false
     }
 }
-
+def sJpush = "3.1.1", // maven sJpush远程库版本
+    sJcore = "1.1.9", // maven sJcore远程库版本
+    sjanalytics = "1.2.0" // maven sjanalytics远程库版本
 dependencies {
     compile fileTree(include: '*.jar', dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -76,10 +78,11 @@ dependencies {
     compile files('src/main/jniLibs/android-mastersdk-1.25.jar')
     compile files('src/main/jniLibs/bugly_agent.jar')
     compile files('src/main/jniLibs/bugly_crash_release.jar')
-    compile files('src/main/jniLibs/jcore-android-1.2.0.jar')
-    compile files('src/main/jniLibs/jpush-android-3.1.2.jar')
     compile files('src/main/jniLibs/Msc.jar')
     compile files('src/main/jniLibs/org.apache.http.legacy.jar')
     compile files('src/main/jniLibs/Sunflower.jar')
-    compile files('src/main/jniLibs/zxing.jar')
+    implementation "cn.jiguang.sdk:jpush:$sJpush"
+    implementation "cn.jiguang.sdk:jcore:$sJcore"
+    implementation "cn.jiguang.sdk:janalytics:$sjanalytics"
+    implementation zxing
 }
