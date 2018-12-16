@@ -31,5 +31,12 @@ ext {
                     pluginVer        : 100, // 插件的版本 ， 升级的需要
                     pluginVersionName: "1.0.0", // 版本名称
             ],
+            "yizhi": [
+                    pliginIsInner    : true, // 内置，外置插件
+                    pluginPackageName: 'com.zyw.horrarndoo.yizhi', // 插件的包名
+                    pluginVersion    : 100, // 版本号
+                    pluginVer        : 100, // 插件的版本 ， 升级的需要
+                    pluginVersionName: "1.0.0", // 版本名称
+            ],
     ]
 }

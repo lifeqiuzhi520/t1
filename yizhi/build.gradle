@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'bugly'
-
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 bugly {
     appId = "c73ecc54da"
     appKey = "27580d71-8095-4e00-8212-85b9ddf985a4"
@@ -15,11 +16,11 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     buildToolsVersion rootProject.ext.buildToolsVersion
     defaultConfig {
-        applicationId "com.xiaoqi.ceshisssssss"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 10
         versionName "1.10"
+        applicationId "com.xiaoqi.ceshisssssss"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
         manifestPlaceholders = [
@@ -86,3 +87,4 @@ dependencies {
     implementation "cn.jiguang.sdk:janalytics:$sjanalytics"
     implementation zxing
 }
+//apply from: "../host-plugin-config/buildPluginApkToHost.gradle"
