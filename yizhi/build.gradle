@@ -49,6 +49,10 @@ android {
 
         }
     }
+
+    dexOptions {
+        preDexLibraries = false
+    }
     lintOptions{
         checkReleaseBuilds false
         abortOnError false
@@ -128,6 +132,13 @@ android {
             shrinkResources false//打开资源压缩
             signingConfig signingConfigs.release //Add your own signing config
         }
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    lintOptions{
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
