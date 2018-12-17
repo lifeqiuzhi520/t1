@@ -1,5 +1,5 @@
 // host
-include ':host'
+include ':host', ':mylibrary', ':photoview-library', ':shouhui'
 // plugin
 include ':plugin-demo'
 include ':plugin-nosdklib'
