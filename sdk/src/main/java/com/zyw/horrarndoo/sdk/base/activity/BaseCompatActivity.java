@@ -31,7 +31,6 @@ import me.yokeyword.fragmentation.anim.FragmentAnimator;
  */
 
 public abstract class BaseCompatActivity extends SupportActivity {
-    protected GlobalApplication mApplication;
     protected WaitPorgressDialog mWaitPorgressDialog;
     protected Context mContext;//全局上下文对象
     protected boolean isTransAnim;
@@ -101,7 +100,6 @@ public abstract class BaseCompatActivity extends SupportActivity {
      */
     protected void initData() {
         mContext = AppUtils.getContext();
-        mApplication = (GlobalApplication) getApplication();
         mWaitPorgressDialog = new WaitPorgressDialog(this);
         isTransAnim = true;
     }

@@ -28,7 +28,6 @@ public abstract class BaseCompatFragment extends SupportFragment {
     protected String TAG;
     protected Context mContext;
     protected Activity mActivity;
-    protected GlobalApplication mApplication;
     protected WaitPorgressDialog mWaitPorgressDialog;
     private Unbinder binder;
 
@@ -102,7 +101,6 @@ public abstract class BaseCompatFragment extends SupportFragment {
     public void initData() {
         mWaitPorgressDialog = new WaitPorgressDialog(mActivity);
         mContext = AppUtils.getContext();
-        mApplication = (GlobalApplication) mActivity.getApplication();
     }
 
     /**

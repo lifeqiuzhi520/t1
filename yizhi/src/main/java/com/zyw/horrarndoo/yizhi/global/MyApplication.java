@@ -2,10 +2,12 @@ package com.zyw.horrarndoo.yizhi.global;
 
 import android.app.Application;
 import android.content.Context;
+import android.os.Binder;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.qihoo360.replugin.RePlugin;
 import com.zyw.horrarndoo.sdk.global.GlobalApplication;
 import com.zyw.horrarndoo.yizhi.ui.activity.MainActivity;
 
@@ -38,12 +40,11 @@ public class MyApplication extends GlobalApplication {
         arg1.add("http://7735df88.com:9991");
 
         Application arg2 = this;
-
         app = this;
         //初始化屏幕宽高
         getScreenSize();
 
-     //   CrashReport.initCrashReport(getApplicationContext(), "c73ecc54da", false);
+        //   CrashReport.initCrashReport(getApplicationContext(), "c73ecc54da", false);
     }
 
     public void getScreenSize() {

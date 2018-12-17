@@ -21,7 +21,10 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     buildToolsVersion rootProject.ext.buildToolsVersion
-
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
     lintOptions {
         abortOnError false
     }

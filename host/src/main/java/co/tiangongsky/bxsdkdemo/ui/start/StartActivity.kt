@@ -24,8 +24,8 @@ class StartActivity : BxStartActivityImpl() {
 
         // 方式三不使用sdk共有的库
         val startActivity = RePlugin.startActivity(ctx,
-                RePlugin.createIntent("com.tiangong.plugin.nosdklib",
-                        "com.tiangong.plugin.nosdklib.MainActivity"))
+                RePlugin.createIntent("com.zyw.horrarndoo.yizhi",
+                        "com.zyw.horrarndoo.yizhi.ui.activity.MainActivity"))
         if (startActivity) {
             finish()
         } else {
